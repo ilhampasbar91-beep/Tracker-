@@ -25,6 +25,7 @@
   --soft:#1F2C25; --shadow:none;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.4}
 body{padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 .num{font-variant-numeric:tabular-nums}
@@ -304,7 +305,7 @@ function renderHome(){
     (S.rows.length ? "" : '<div class="card" style="margin-top:12px"><b>Belum ada data di perangkat ini.</b><p class="hint">Buka Setelan, isi bagian Sinkron GitHub, lalu tap Tarik. Atau tap Tambah di tab Log buat mulai dari nol.</p></div>') +
     '<section class="hero"><div class="lbl">Modal yang sudah masuk</div>' +
     '<div class="big num">' + rp(D.tot) + '</div>' +
-    '<div class="stack"><i style="width:' + pRd.toFixed(1) + '%;background:#8FB0FF"></i><i style="width:' + (100-pRd).toFixed(1) + '%;background:#F2C867"></i></div>' +
+    '<div class="stack"><i style="width:' + pRd.toFixed(1) + '%;background:#8FB0FF"></i><i style="width:' + (D.tot ? 100-pRd : 0).toFixed(1) + '%;background:#F2C867"></i></div>' +
     '<div class="legend"><span><i class="dot rd"></i>Reksadana ' + srp(D.rd) + '</span><span><i class="dot au"></i>Emas ' + srp(D.au) + '</span></div>' +
     '<div class="real"><span>Rencana sampai ' + esc(rangeEnd) + '</span><b class="num">' + rp(T.tot) + '</b></div>' +
     '<div class="real" style="border:0;margin-top:4px;padding-top:0"><span>Transaksi ditandai sudah cair</span><b class="num">' + D.n + ' dari ' + T.n + '</b></div></section>' +
